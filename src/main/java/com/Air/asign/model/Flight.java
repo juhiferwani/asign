@@ -20,7 +20,10 @@ public class Flight {
 	
 	private String name;
 	private String timing;
+	//Possible timing values are  (Morning / Afternoon / Evening / Night)
+
 	private String stop;
+	//Possible stop values are Direct or Indirect
 	
 	public Long getId() {
 		return id;

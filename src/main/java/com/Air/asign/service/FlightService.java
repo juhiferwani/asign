@@ -33,9 +33,8 @@ public class FlightService {
 	public List<Flight> getByName(String name){
 		List<Flight> flights = new ArrayList<>();
 		repo.findAll().forEach(flights :: add);
-		List<Flight> res = flights.stream().filter((Flight flight)->{
-			return flight.getName().equals(name);
-		}).collect(Collectors.toList());
+		List<Flight> res = flights.stream().filter(x -> x.getName().equalsIgnoreCase(name))
+		.collect(Collectors.toList());
 		
 		return res;
 	}
