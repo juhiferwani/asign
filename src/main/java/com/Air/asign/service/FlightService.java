@@ -43,7 +43,7 @@ public class FlightService {
 		List<Flight> flights = new ArrayList<>();
 		repo.findAll().forEach(flights :: add);
 		List<Flight> res = flights.stream().filter((Flight flight)->{
-			return flight.getTiming().equals(timing);
+			return flight.getTiming().equalsIgnoreCase(timing);
 		}).collect(Collectors.toList());
 		
 		return res;
@@ -53,7 +53,7 @@ public class FlightService {
 		List<Flight> flights = new ArrayList<>();
 		repo.findAll().forEach(flights :: add);
 		List<Flight> res = flights.stream().filter((Flight flight)->{
-			return flight.getStop().equals(stop);
+			return flight.getStop().equalsIgnoreCase(stop);
 		}).collect(Collectors.toList());
 		
 		return res;

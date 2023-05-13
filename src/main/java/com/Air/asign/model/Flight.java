@@ -1,10 +1,13 @@
 package com.Air.asign.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +16,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+
+@Entity
+@Table(name = "Flight")
 public class Flight {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	//auto generates the id by JPA and hibernate
